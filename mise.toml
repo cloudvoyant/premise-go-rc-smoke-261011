@@ -1,0 +1,3 @@
+monorepo_root = true
+[monorepo]
+config_roots = ['apps/*', 'libs/*']
