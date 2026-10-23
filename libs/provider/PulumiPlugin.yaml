@@ -1,0 +1,3 @@
+resource: true
+name: provider
+runtime: go

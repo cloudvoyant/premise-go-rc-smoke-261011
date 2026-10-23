@@ -1,0 +1,54 @@
+{
+  "name": "provider",
+  "displayName": "greeting",
+  "version": "0.1.0",
+  "namespace": "premise",
+  "meta": {
+    "moduleFormat": "(.*)"
+  },
+  "language": {
+    "csharp": {
+      "respectSchemaVersion": true
+    },
+    "go": {
+      "generateResourceContainerTypes": true,
+      "importBasePath": "github.com/cloudvoyant/premise-go-rc-smoke-261011/v4/libs/provider/sdk/go/greeting",
+      "respectSchemaVersion": true
+    },
+    "nodejs": {
+      "respectSchemaVersion": true
+    },
+    "python": {
+      "pyproject": {
+        "enabled": true
+      },
+      "respectSchemaVersion": true
+    }
+  },
+  "config": {},
+  "provider": {
+    "type": "object"
+  },
+  "resources": {
+    "provider:index:Greeting": {
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "inputProperties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "requiredInputs": [
+        "name"
+      ],
+      "isComponent": true
+    }
+  }
+}

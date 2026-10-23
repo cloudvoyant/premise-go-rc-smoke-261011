@@ -1,0 +1,62 @@
+workspace:
+    name: premise-shared-go-qjdhtf_8
+    kind: monorepo
+    schema-version: "0.2"
+    package_managers:
+        - go
+    providers:
+        ci: github
+        tools: mise
+        tasks: mise
+        infra: pulumi
+        versioning: svu
+    projects:
+        - name: cli
+          template: /Users/siddharthkapoor/Projects/premise-go:premise-cobra-cli
+          path: apps/cli
+          answers:
+            module: github.com/cloudvoyant/premise-go-rc-smoke-261011/v4
+            name: cli
+            publication: private-local
+        - name: service
+          template: /Users/siddharthkapoor/Projects/premise-go:premise-connect-grpc-service
+          path: apps/service
+          answers:
+            module: github.com/cloudvoyant/premise-go-rc-smoke-261011/v4
+            name: service
+            publication: private-local
+        - name: web
+          template: /Users/siddharthkapoor/Projects/premise-go:premise-htmx-app
+          path: apps/web
+          answers:
+            module: github.com/cloudvoyant/premise-go-rc-smoke-261011/v4
+            name: web
+            publication: private-local
+        - name: components
+          template: /Users/siddharthkapoor/Projects/premise-go:premise-pulumi-component-lib
+          path: libs/components
+          answers:
+            module: github.com/cloudvoyant/premise-go-rc-smoke-261011/v4
+            name: components
+            publication: public
+        - name: local
+          template: /Users/siddharthkapoor/Projects/premise-go:premise-go-lib
+          path: libs/local
+          answers:
+            module: github.com/cloudvoyant/premise-go-rc-smoke-261011/v4
+            name: local
+            publication: private-local
+        - name: math
+          template: /Users/siddharthkapoor/Projects/premise-go:premise-go-lib
+          path: libs/math
+          answers:
+            module: github.com/cloudvoyant/premise-go-rc-smoke-261011/v4
+            name: math
+            publication: public
+        - name: provider
+          template: /Users/siddharthkapoor/Projects/premise-go:premise-pulumi-component-package
+          path: libs/provider
+          answers:
+            module: github.com/cloudvoyant/premise-go-rc-smoke-261011/v4
+            name: provider
+            publication: public
